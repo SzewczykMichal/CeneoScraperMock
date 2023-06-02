@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Projekt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Scraper</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <h3>Cel aplikacji</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, labore tempore debitis repudiandae accusantium optio modi autem, laborum voluptate quisquam cupiditate? Dolores nostrum nihil, eum assumenda odio dolore architecto numquam.</p>
+    </div>
+    <div class="container">
+        <h3>Opis działania aplikacji</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, labore tempore debitis repudiandae accusantium optio modi autem, laborum voluptate quisquam cupiditate? Dolores nostrum nihil, eum assumenda odio dolore architecto numquam.</p>
+    </div>
+
+    <div class="container">
+        <h3>Zastosowanie biblioteki</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, labore tempore debitis repudiandae accusantium optio modi autem, laborum voluptate quisquam cupiditate? Dolores nostrum nihil, eum assumenda odio dolore architecto numquam.</p>
+    </div>
+
+    <div class="container">
+        <h3>Zastosowanie podejścia</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, labore tempore debitis repudiandae accusantium optio modi autem, laborum voluptate quisquam cupiditate? Dolores nostrum nihil, eum assumenda odio dolore architecto numquam.</p>
+    </div>
+    <div class="d-flex">
+        <div class="row">
+            <div class="col">
+                <table id="opinions">
+                    <thead>
+                        <tr>
+                            <th>Id opinii</th>
+                            <th>Autor</th>
+                            <th>Rekomendacja</th>
+                            <th>Liczba gwiazdek</th>
+                            <th>Tresc</th>
+                            <th>Lista zalet</th>
+                            <th>Lista wad</th>
+                            <th>Potwierdzono zakupem</th>
+                            <th>Data wystawienia</th>
+                            <th>Data zakupu</th>
+                            <th>Przydatna</th>
+                            <th>Nieprzydatna</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <script>
+                            $(document).ready(function() {
+                                var table = $('#opinions').DataTable({
+                                    ajax: {
+                                        url: "39562616.json",
+                                        dataSrc: ""
+                                    },
+                                    columns: [{
+                                        data: 'opinion_id',
+                                        title: 'ID opinii'
+                                    }, {
+                                        data: 'author',
+                                        title: 'Autor'
+                                    }, {
+                                        data: 'content',
+                                        title: 'Treść'
+                                    }, {
+                                        data: 'stars',
+                                        title: 'Gwiazdki'
+                                    }, {
+                                        data: 'recommendation',
+                                        title: 'Rekomendacja'
+                                    }, {
+                                        data: 'pros',
+                                        title: 'Lista zalet'
+                                    }, {
+                                        data: 'cons',
+                                        title: 'Lista wad'
+                                    }, {
+                                        data: 'useful_count',
+                                        title: 'Przydatna'
+                                    }, {
+                                        data: 'unuseful_count',
+                                        title: 'Nieprzydatna'
+                                    }, {
+                                        data: 'purchased',
+                                        title: 'Potwierdzona zakupem'
+                                    }, {
+                                        data: 'opinion_date',
+                                        title: 'Data wystawienia'
+                                    }, {
+                                        data: 'purchase_date',
+                                        title: 'Data zakupu'
+                                    }, ],
+                                    columnDefs: [{
+                                        targets: -1,
+                                        data: null,
+                                        defaultContent: '<button>Rozwiń!</button>'
+                                    }, ],
+                                });
+                            });
+                        </script>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container fixed-bottom">
+        <footer>
+            <script>
+                $(document).ready(function() {
+                    $("#opinions").DataTable({
+                        responsive: true,
+                    });
+                });
+            </script>
+        </footer>
+    </div>
+</body>
+
+</html>
